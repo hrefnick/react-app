@@ -2,14 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Post.scss';
 
-const Post = () => (
+
+// This is a stateless component
+const Post = (props) => (
   <div className="Post">
-    Post Component
+    <h2>{props.title}</h2>
+        {/*<p>{props.body}</p>*/}
+      <p dangerouslySetInnerHTML={{__html: props.body}} />
   </div>
 );
 
-Post.propTypes = {};
+Post.propTypes = {
+    "title": PropTypes.string,
+    "body": PropTypes.string,
+};
 
-Post.defaultProps = {};
+Post.defaultProps = {
+    "title": "Post Title",
+    "body": "Post Body",
+};
 
 export default Post;

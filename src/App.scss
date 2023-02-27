@@ -1,7 +1,14 @@
 $primary: #336699;
+
+@import '~bootstrap/scss/bootstrap';
+
 .App {
   text-align: center;
-  background-color: $primary;
+  background-color: darken($primary, 10%);
   color: white;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
 }
