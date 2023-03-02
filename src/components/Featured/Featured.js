@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Featured.scss';
 import '../Book/Book';
 import axios from "axios";
+import Card from "react-bootstrap/Card";
 
 
 
@@ -34,7 +35,7 @@ class Featured extends Component {
         return (
             <div className="Featured">
                 {this.state.isLoaded ? '' : <p>Loading...</p>}
-                <img src={this.state.featured?.media_details?.sizes?.full?.source_url}/>
+                <Card.Img style={{width: '10rem', height: '15rem'}} variant="top" src={this.state.featured?.media_details?.sizes?.full?.source_url} />
             </div>
         );
     }
