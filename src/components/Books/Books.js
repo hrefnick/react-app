@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import './Books.scss';
 import axios from "axios";
 import Book from "../Book/Book";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 
     class Books extends Component {
@@ -35,17 +37,19 @@ import Book from "../Book/Book";
 
         render() {
             return (
-                <div className="Books">
+                <Row className="Books">
                     {this.state.isLoaded ? '' : <p>Loading...</p>}
                     {this.state.books.map(book =>
+                        <Col sm={4}>
                         <Book
                             title={book.title.rendered}
                             description={book.content.rendered}
                             image={book._links['wp:featuredmedia'][0].href}
                             key={book.id}
                         />
+                        </Col>
                     )}
-                </div>
+                </Row>
             );
         }
     }

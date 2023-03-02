@@ -4,11 +4,9 @@ import './Book.scss';
 import '../Featured/Featured';
 import Featured from "../Featured/Featured";
 import Card from "react-bootstrap/Card";
-import Col from 'react-bootstrap/Col';
 
 const Book = (props) => (
-    <Col sm={3}>
-      <Card className="Book" style={{ width: '50rem', color: "black", padding: 20, margin: 50 }}>
+      <Card className="Book" style={{ color: "black", padding: 20, "margin-bottom": 50 }}>
           <Featured
               image={props.image}/>
           <Card.Body>
@@ -18,7 +16,6 @@ const Book = (props) => (
               </Card.Text>
           </Card.Body>
       </Card>
-    </Col>
 
 
 
